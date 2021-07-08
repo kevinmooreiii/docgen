@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Download and Install &#8212; MechDriver  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/automech.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pub" href="pub.html" />
+    <link rel="prev" title="HTML BUILD" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="download-and-install">
+<h1>Download and Install<a class="headerlink" href="#download-and-install" title="Permalink to this headline">¶</a></h1>
+<p>All of the packages and libraries distributed within in the AutoMech suite can be obtained in a similar manner.
+Therefore the following instructions should be generally applicable to any code of interest.
+Each code can be compiled on Linux or Mac, however we have more support for Linux in terms of ease of installation.</p>
+<section id="install-via-conda">
+<h2>Install via Conda<a class="headerlink" href="#install-via-conda" title="Permalink to this headline">¶</a></h2>
+<p>The simplest and most direct way to install any code is by using the Conda package manager, which allows the user to obtain pre-compiled versions of the code and its dependencies.</p>
+<p>This is the recommended method of installation as Conda environments will deal with dependency issues. Also, it will make installing updates much easier as the codes are developed.</p>
+<dl class="simple">
+<dt>Installation via Conda can be conducted in several means:</dt><dd><ol class="arabic simple">
+<li><p>Use one of our pre-defined AutoMech environments</p></li>
+<li><p>Install a package directly into</p></li>
+</ol>
+</dd>
+</dl>
+<p>All of the packages are available on Anaconda cloud: &lt;link&gt;</p>
+<p>Users unfamiliar with Conda, refer to &lt;link below&gt;.</p>
+<section id="build-automech-environments">
+<h3>Build AutoMech Environments<a class="headerlink" href="#build-automech-environments" title="Permalink to this headline">¶</a></h3>
+<p>We have generated a pre-set <cite>AutoMech</cite> environment which includes binaries for all codes in the suite. This is the easiest way to get any package, particularly if the user does not care about which one they want. Useful for running higher-level codes, e.g. MechDriver and MechAnalyzer.</p>
+<p>This environment can be created and activated with the commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda env create auto-mech/amech-env</span>
+<span class="go">conda activate amech-env</span>
+</pre></div>
+</div>
+<p>Alternatively, the user may download the corresponding the Auto-Mech environment file directly (<a class="reference external" href="https://anaconda.org/Auto-Mech/amech-env/files">https://anaconda.org/Auto-Mech/amech-env/files</a>) and create the environment uing this file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda env create -f auto-mech-env.yml</span>
+<span class="go">conda activate amech-env</span>
+</pre></div>
+</div>
+<p>The user may also build an environment for working with specific AutoMech packages. This is useful for facilitating builds from source code as well as debugging. These environments are defined in environment.yml files that are availablein the package’s GitHub repository</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd &lt;package-top-directory&gt;</span>
+<span class="go">conda env create create -f environment.yml</span>
+<span class="go">conda activate &lt;package-env&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="install-into-existing-miniconda">
+<h3>Install into Existing MiniConda<a class="headerlink" href="#install-into-existing-miniconda" title="Permalink to this headline">¶</a></h3>
+<p>Activate an environment in you wish to use to install a given package and run the install command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda install -c auto-mech &lt;package name&gt;</span>
+</pre></div>
+</div>
+<p>If you do not have a preferred Conda environment set up, an empty environment with no packages can be created and activated with the following commands</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda create --name myenv</span>
+<span class="go">conda activate myenv</span>
+</pre></div>
+</div>
+<p>where <cite>myenv</cite> should be replaced with your preferred name for the environment.</p>
+</section>
+<section id="updating-packages">
+<h3>Updating Packages<a class="headerlink" href="#updating-packages" title="Permalink to this headline">¶</a></h3>
+<p>Packages can be installed simply using teh following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda install -c auto-mech &lt;package name&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="building-from-source">
+<h2>Building from Source<a class="headerlink" href="#building-from-source" title="Permalink to this headline">¶</a></h2>
+<p>The source codes for all AutoMech codes can be obtained from their respective GitHub repositories, which are collectively listed on the main AutoMech GitHub page: &lt;<a class="reference external" href="https://github.com/Auto-Mech/">https://github.com/Auto-Mech/</a>&gt;.</p>
+<p>Each code can be nominally built by executing the build script in the repository via:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash build.sh</span>
+</pre></div>
+</div>
+<p>The build process depends slightly on the package. For C++/C/Fortran codes, the script will
+use cmake to build the code according to the accompanying CMakeLists.txt file. Whereas Python
+codes will execture the accompanying setup.py files. The user may have to further modify the
+build.sh, CMakeLists.txt, or setup.py files to deal with the requirements of their specific system.</p>
+<p>Of course, building from source requires proper installation of the dependencies of the desired
+package. One method involves generating and activating the Conda environment using the
+environment.yml file, as discussed previously. Alternatively, each of the dependencies can
+be built from source if they are not already installed. Dependencies corresponding to AutoMech
+packages can be resolved by downloading their GitHub. Other libraries are the user’s responsibility.</p>
+</section>
+<section id="extra-help">
+<h2>Extra Help<a class="headerlink" href="#extra-help" title="Permalink to this headline">¶</a></h2>
+<section id="installing-conda">
+<h3>Installing Conda<a class="headerlink" href="#installing-conda" title="Permalink to this headline">¶</a></h3>
+<p>Builds an <cite>environment</cite> where all of the executables…</p>
+<p>For users on systems, contact administrator to see if Conda installed.</p>
+<p>A MiniConda distribution can be installed using the following script.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env bash
+
+<span class="go">if [ &quot;$(uname)&quot; == &quot;Darwin&quot; ]; then</span>
+<span class="go">    wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh</span>
+<span class="go">    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $CONDA</span>
+<span class="go">elif [ &quot;$(uname)&quot; == &quot;Linux&quot; ]; then</span>
+<span class="go">    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
+<span class="go">    bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA</span>
+<span class="go">fi</span>
+</pre></div>
+</div>
+<p>If Conda is installed but the commands are not functioning, you may need to iniliatize Conda via the command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">. /path/to/conda.sh</span>
+</pre></div>
+</div>
+<p>which places Conda executables in your PATH. The specific location of conda.sh depends on the Conda install. This may also be placed in .bashrc (or shell equivalent).</p>
+<p>For more instructions, see &lt;<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/index.html">https://conda.io/projects/conda/en/latest/user-guide/index.html</a>&gt;</p>
+</section>
+<section id="fake-install-script">
+<h3>Fake Install Script<a class="headerlink" href="#fake-install-script" title="Permalink to this headline">¶</a></h3>
+<p>Quick script to place executables in PATH for a given terminal session.</p>
+<p>Note that the above command does not <strong>permanently</strong> alter your PATH, it only affects PATH for the current login session.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>run with: . /path/to/fake-install.sh
+<span class="go">export _THIS_DIR=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &gt;/dev/null 2&gt;&amp;1 &amp;&amp; pwd )&quot;</span>
+
+<span class="go">for d in ls $_THIS_DIR/\*/; do</span>
+<span class="go">    export PATH=$d:$PATH</span>
+<span class="go">    export PYTHONPATH=$d:$PYTHONPATH</span>
+<span class="go">done</span>
+
+<span class="go">for d in ls $_THIS_DIR/\*/\*; do</span>
+<span class="go">   export PATH=$d:$PATH</span>
+<span class="go">   export PYTHONPATH=$d:$PYTHONPATH</span>
+<span class="go">done</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Download and Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-via-conda">Install via Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-help">Extra Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pub.html">Pub</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">HTML BUILD</a></li>
+      <li>Next: <a href="pub.html" title="next chapter">Pub</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Kevin Moore.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/install.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
